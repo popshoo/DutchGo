@@ -1,0 +1,68 @@
+@{
+    ViewBag.Title = "Home Pages";
+}
+
+<div class="col-md-6">
+    <div class="product-info">
+        <img src="~/img/Curiosidades-sobre-Vincent-Van-Gogh.jpg" />
+        <h3>Mug</h3>
+        <ul class="product-props">
+            <li>Price: $9.99</li>
+            <li>Artist: Van Gogh</li>
+            <li>Title: </li>
+            <li>Descripcion: self-portrait</li>
+        </ul>
+        <button id="buyButton" class="btn btn-success">Buy</button>
+    </div>
+
+    <div id="theform">
+        <form>
+            <label>Your Name:</label>
+            <br />
+            <Input />
+            <br />
+            <label>Email:</label>
+            <br>
+            <input type="email" />
+            <br>
+            <label>Subject:</label>
+            <input type="text" />
+            <br>
+            <label>Message:</label>
+            <br>
+            <textarea rows="4"></textarea>
+            <br />
+            <input type="submit" value="send-Message" />
+        </form>
+    </div>
+
+    <div>
+        <div id="loginToggle">
+            <form id="popup -form">
+                <div>
+                    <label>UserName</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <label>PassWord</label>
+                    <input type="password">
+                </div>
+                <div>
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <label>Sex</label>
+                </div>
+                <!-- <div>
+                    <label>UserName</label>
+                    <input type="">
+                </div> -->
+                <div><input type="submit" value="Login" /></div>
+            </form>
+        </div>
+    </div>
+   
+
+    <div class="col-md-3">
+        <p>This a fun site to do some buying of dutch products.</p>
+    </div>
+</div>
