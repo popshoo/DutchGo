@@ -8,6 +8,10 @@ namespace DutchGo.Data
         IEnumerable<Product> GetAllProducts();
         IEnumerable<Product> GetProductsByCategory(string category);
 
-        bool SaveChanges();
+        IEnumerable<Order> GetAllOrders(bool includeItems);
+        Order GetOrdersById(int id);
+
+        bool SaveAll();
+        void AddEntity(object model);
     }
 }

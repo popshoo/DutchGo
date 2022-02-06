@@ -1,6 +1,7 @@
 ﻿using DutchGo.Data;
 using DutchGo.Services;
 using DutchGo.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -32,7 +33,7 @@ namespace DutchGo.Controllers
         [HttpPost("contact")]
         public IActionResult Contact(ContactViewModel model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _mailService.SendMessage("geraldomanuel46@gmail.com", model.Subject, $"From: {model.Name} - {model.Email}, Message: {model.Message}");
                 ViewBag.UserMessage = "Mail Sent";
@@ -40,14 +41,13 @@ namespace DutchGo.Controllers
             }
             return View();
         }
-
         public IActionResult About()
         {
             ViewBag.Title = "About Us";
             return View();
         }
-
-        public IActionResult  Shop()
+        [Authorize]
+        public IActionResult Shop()
         {
             var results = _repository.GetAllProducts();
 

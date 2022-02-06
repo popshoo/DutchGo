@@ -1,2 +1,7 @@
 /wwwroot
 config.json
+appsettings.Development.json
+appsettings.jo
+/sd
+/bin
+/.vs

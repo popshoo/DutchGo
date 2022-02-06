@@ -1,16 +1,10 @@
 using DutchGo.Data;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection.PortableExecutable;
-using System.Threading.Tasks;
+
 
 namespace DutchGo
 {
@@ -46,8 +40,7 @@ namespace DutchGo
             .ConfigureAppConfiguration(AddConfiguration)
             .ConfigureWebHostDefaults(WebHostBuilder =>
             {
-               WebHostBuilder.UseStartup<Startup>()
-                .Build();
+               WebHostBuilder.UseStartup<Startup>();
             });
 
             private static void AddConfiguration(HostBuilderContext ctx, IConfigurationBuilder builder)

@@ -2,40 +2,55 @@
 <html>
 <head>
     <title>Dutch Go: @ViewBag.Title</title>
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/fortawesome/fortawesome-free/css/all.min.css" rel="stylesheet" />
-    <link href="~/css/index.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="~/fortawesome/fortawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/index.css" />
 </head>
-<body>
-    <div class="row">
+<body> 
     <header class="container-fluid">
-      <nav class="navbar navbar-dark bg-dark-expand-md">
-        <h1 class="navbar-brand"><i class="fas fa-paint-brush"></i>Welcome to Dutch Treat</h1>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="theMenu">
-           <span class="navbar-toggler-icon"></span>
+     <nav class="navbar navbar-extend navbar-light bg-light">
+        <div class="container-fluid">
+        <h6>Welcome To Dutch GO</h6>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-            <div id="theMenu" class="navbar-collapse collapse">
-                <ul>
-                    <li  class="nav-item" ><a class="nav-link" asp-controller="App" asp-action="Index">Home</a></li>
-                    <li  class="nav-item" ><a class="nav-link" asp-controller="Contact" asp-action="Contact">contact</a></li>
-                    <li  class="nav-item" ><a class="nav-link" asp-controller="About" asp-action="About">About</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" asp-controller="App">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" asp-controller="app" asp-action="contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" asp-controller="app" asp-action="About">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" asp-controller="app" asp-action="Shop">Shop</a>
+            </li>
+          </ul>
+            <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+        </div>
+</nav>
     </header>
     <section class="container">
         <h2 class="text-center">@ViewBag.Title</h2>
+       
         @RenderBody()
+
     </section>
     <footer class="container"> 
-        <div class="text-center">CopyRight2017 Dutch Treat LLC</div>
+        <div class="text-center">CopyRight2022 Dutch Treat LLC</div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
     <script src="~/js/index.js"></script>
-
     @RenderSection("scripts", false)
-    </div>
+    
 </body>
 </html>
